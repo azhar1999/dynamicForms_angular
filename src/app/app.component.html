@@ -1,0 +1,18 @@
+<div class="main">
+  <div class="formClass">
+    
+    <form class="form" [formGroup]="formgroup" (ngSubmit)="submit()">
+      <span >Dynamic Forms</span>
+
+      <div *ngFor="let formField of fields" style="margin:1em 0">
+
+        <label>{{formField.name}}</label>
+        <input type="{{formField.type}}" value="{{formField.name}}" formControlName="{{formField.name}}" />
+        <br>
+      </div>
+      <div class="buttonClass">
+        <button class="button" type="submit" [disabled]="this.formgroup.invalid">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
